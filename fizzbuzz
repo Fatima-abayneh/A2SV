@@ -1,0 +1,22 @@
+class Solution {
+public:
+    vector<string> fizzBuzz(int n) {
+        vector<string> mult;
+       
+   
+    for(int i=1; i<=n;i++)
+    {
+   string num;
+            if(i%3==0)
+                num+="Fizz";
+            if(i%5==0)
+                num+="Buzz";
+            if(num.length()==0)
+                num=to_string(i);
+            mult.push_back(num);
+
+    }
+        
+return mult;
+    }
+};
