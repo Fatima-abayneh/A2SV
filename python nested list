@@ -1,0 +1,14 @@
+if __name__ == '__main__':
+    Record =[]
+    for n in range(int(input())):
+        name = input()
+        score = float(input())
+        Record.append([name,score])
+    sorted_list=sorted(list(set([a[1] for a in Record] )))
+    second_low=sorted_list[1]
+    low_final=[]
+    for stud in Record:
+        if second_low==stud[1]:
+            low_final.append(stud[0])
+    for stud in sorted(low_final):
+        print(stud)
