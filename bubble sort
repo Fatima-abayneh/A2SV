@@ -1,0 +1,35 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+#
+# Complete the 'countSwaps' function below.
+#
+# The function accepts INTEGER_ARRAY a as parameter.
+#
+
+def bubble_sort(lst):
+    number_of_swaps = 0
+
+    if len(lst) < 2:
+        return num_swaps
+
+    for i in range(len(lst) - 1, 0, -1):
+        for j in range(i):
+            if lst[j] > lst[j + 1]:
+                lst[j], lst[j+1] = lst[j+1], lst[j]
+                number_of_swaps += 1
+
+    return number_of_swaps
+n=int(input().strip())
+a = [int(temp) for temp in input().strip().split(' ')]
+swaps = bubble_sort(a)
+
+print('Array is sorted in {0} swaps.'.format(swaps))
+print('First Element: {0}'.format(a[0]))
+print('Last Element: {0}'.format(a[-1]))      
+        
