@@ -15,9 +15,6 @@ import sys
 def bubble_sort(lst):
     number_of_swaps = 0
 
-    if len(lst) < 2:
-        return num_swaps
-
     for i in range(len(lst) - 1, 0, -1):
         for j in range(i):
             if lst[j] > lst[j + 1]:
