@@ -1,0 +1,13 @@
+n=int(input("enter number of elements "))
+lists=[]
+zero_list=[]
+cout=0
+for i in range(0, n):
+    ele = int(input())
+    lists.append(ele)
+for j in lists:
+    if j==0:
+        lists.remove(j)
+        zero_list.append(j)
+final=lists+zero_list
+print(final)
