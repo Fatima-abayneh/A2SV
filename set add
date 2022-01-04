@@ -1,0 +1,5 @@
+N=int(input())
+distcount=set()
+for i in range(N):
+    distcount.add(input())
+print(len(distcount))
