@@ -1,0 +1,26 @@
+if __name__ == '__main__':
+    N = int(input())
+    new = []
+    nu = []
+
+    for i in range(N):
+        x = input().split()
+        new.append(x)
+
+    for i in range(len(new)):
+        if new[i][0] == 'insert':
+            x = int(new[i][1])
+            y = int(new[i][2])
+            nu.insert(x,y)
+        elif new[i][0] == 'print':
+            print(nu)
+        elif new[i][0] == 'remove':
+            nu.remove(int(new[i][1]))
+        elif new[i][0] == 'append':
+            nu.append(int(new[i][1]))
+        elif new[i][0] == 'sort':
+            nu.sort()
+        elif new[i][0] == 'pop':
+            nu.pop()
+        elif new[i][0] == 'reverse':
+            nu.reverse()
