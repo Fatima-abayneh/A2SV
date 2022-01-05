@@ -1,0 +1,9 @@
+n1 = int(input())
+n2 = list(input().split())
+n3 = int(input())
+n4 = list(input().split())
+
+set1 = set(n2)
+set2 = set(n4)
+
+print(len(set1.union(set2)))
