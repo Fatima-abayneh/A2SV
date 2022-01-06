@@ -1,0 +1,6 @@
+from itertools import product
+lst = map(int, input().split())
+lstm = map(int, input().split())
+out=list(product(lst,lstm))
+for i in out:
+    print(i,end=" ") 
