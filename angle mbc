@@ -1,0 +1,11 @@
+import math
+def triangle_side():
+    ab=int(input())
+    bc=int(input())
+    ac=math.sqrt((ab**2)+(bc**2))
+    mc=ac/2
+    theta=math.atan(ab/bc)
+    degree=chr(176)
+    print(str(round(math.degrees(theta))),degree, sep='')
+    
+triangle_side()
