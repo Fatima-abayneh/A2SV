@@ -1,0 +1,12 @@
+class Solution:
+    def isIsomorphic(self, s: str, t: str) -> bool:
+        result = dict()
+        for i in range(len(s)):
+            d1, d2 = s[i], t[i]
+            if d1 not in result:
+                if d2 in result.values():
+                    return False
+                result[d1] = d2
+            elif result[d1] != d2:
+                return False
+        return True
