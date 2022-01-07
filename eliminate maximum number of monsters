@@ -1,0 +1,13 @@
+class Solution:
+    def eliminateMaximum(self, dist: List[int], speed: List[int]) -> int:
+        time=[]
+        for d,s in zip(dist,speed):
+            min_reached= math.ceil (d/s)
+            time.append(min_reached)
+        time.sort()
+        result=0
+        for minu in range(len(time)):
+            if minu>=time[minu]:
+                return result
+            result+=1
+        return result
