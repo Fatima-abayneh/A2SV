@@ -1,0 +1,8 @@
+class Solution:
+    def sortArrayByParity(self, nums: List[int]) -> List[int]:
+        temp_even=[x for x in nums if x % 2 == 0]
+        temp_odd=[x for x in nums if x % 2 != 0]
+        return temp_even+temp_odd
+                
+            
+        
