@@ -1,0 +1,89 @@
+class MyCircularDeque:
+
+    def __init__(self, k: int):
+        self.k = k
+        self.c = 0
+        self.fr = []
+        self.rr = []
+
+    def insertFront(self, value: int) -> bool:
+        if self.c < self.k:
+            self.fr.append(value)
+            self.c += 1
+            return True
+        else:
+            return False
+        
+    def insertLast(self, value: int) -> bool:
+        if self.c < self.k:
+            self.rr.append(value)
+            self.c += 1
+            return True
+        else:
+            return False
+        
+    def deleteFront(self) -> bool:
+        if self.c != 0:
+            if self.fr:
+                self.fr.pop()
+            elif self.rr:
+                self.rr.pop(0)
+            self.c -= 1
+            return True
+        else:
+            return False
+
+    def deleteLast(self) -> bool:
+        if self.c != 0:
+            if self.rr:
+                self.rr.pop()
+            elif self.fr:
+                self.fr.pop(0)
+            self.c -= 1
+            return True
+        else:
+            return False
+
+    def getFront(self) -> int:
+        if self.fr:
+            return self.fr[-1]
+        elif self.rr:
+            return self.rr[0]
+        else:
+            return -1
+
+    def getRear(self) -> int:
+        if self.rr:
+            return self.rr[-1]
+        elif self.fr:
+            return self.fr[0]
+        else:
+            return -1
+
+    def isEmpty(self) -> bool:
+        if self.c== 0:
+            return True
+        else:
+            return False
+
+    def isFull(self) -> bool:
+        if self.c== self.k:
+            return True
+        else:
+            return False
+        
+
+
+# Your MyCircularDeque object will be instantiated and called as such:
+# obj = MyCircularDeque(k)
+# param_1 = obj.insertFront(value)
+# param_2 = obj.insertLast(value)
+# param_3 = obj.deleteFront()
+# param_4 = obj.deleteLast()
+# param_5 = obj.getFront()
+# param_6 = obj.getRear()
+# param_7 = obj.isEmpty()
+# param_8 = obj.isFull()
+
+
+
