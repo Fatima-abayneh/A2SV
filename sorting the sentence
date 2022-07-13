@@ -1,0 +1,9 @@
+class Solution:
+    def sortSentence(self, s: str) -> str:
+        lst=s.split()
+        lst.sort(key = lambda x: x[-1]) 
+        lt=' '.join(i[:-1]for i in lst)
+        return lt
+         
+    
+        
