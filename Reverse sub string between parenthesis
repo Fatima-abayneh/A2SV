@@ -1,0 +1,16 @@
+class Solution:
+    def reverseParentheses(self, s: str) -> str:
+        stk = []
+        Q = []
+        for c in s : 
+            if c!=')' :
+                stk.append(c)
+            else:
+                d= stk.pop()
+                while d!='(':
+                    Q.append(d)
+                    d=stk.pop()
+                while  Q :
+                    stk.append(Q.pop(0))       
+        result = "".join(stk)
+        return result
