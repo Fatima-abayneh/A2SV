@@ -12,21 +12,23 @@ import sys
 # The function accepts INTEGER_ARRAY a as parameter.
 #
 
-def bubble_sort(lst):
-    number_of_swaps = 0
+def countSwaps(a):
+    number_of_swap = 0
+    for i in range(len(a)):
+        for j in range(0 , len(a)-i-1):
+            if a[j] > a[j+1]:
+                number_of_swap = number_of_swap + 1
+                a[j] , a[j+1] = a[j+1] , a[j]
+                
+                
+    print("Array is sorted in",number_of_swap,"swaps.")
+    print("First Element:",a[0])
+    print("Last Element:",a[-1])          
+            
 
-    for i in range(len(lst) - 1, 0, -1):
-        for j in range(i):
-            if lst[j] > lst[j + 1]:
-                lst[j], lst[j+1] = lst[j+1], lst[j]
-                number_of_swaps += 1
+if __name__ == '__main__':
+    n = int(input().strip())
 
-    return number_of_swaps
-n=int(input().strip())
-a = [int(temp) for temp in input().strip().split(' ')]
-swaps = bubble_sort(a)
+    a = list(map(int, input().rstrip().split()))
 
-print('Array is sorted in {0} swaps.'.format(swaps))
-print('First Element: {0}'.format(a[0]))
-print('Last Element: {0}'.format(a[-1]))      
-        
+    countSwaps(a)
