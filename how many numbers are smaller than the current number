@@ -1,10 +1,19 @@
-class Solution:
-    def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
-        count_list=[]
+class Solution(object):
+    def smallerNumbersThanCurrent(self, nums):
+        max_val=max(nums)+1
+        count=[0]*max_val
+        outpute=[8]*len(nums)
+        for i in nums:
+            count[i]+=1
+        for i in range(1,len(count)):
+            count[i]+=count[i-1]
         for i in range(len(nums)):
-            count=0
-            for j in range(len(nums)):
-                if j!=i and nums[j]<nums[i]:
-                    count+=1
-            count_list.append(count)
-        return count_list
+            if nums[i]!=0:
+                outpute[i]=count[nums[i]-1]
+            else:
+                outpute[i]=0
+        return outpute
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
