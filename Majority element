@@ -1,0 +1,14 @@
+class Solution(object):
+    def majorityElement(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        floor_div = len(nums)//2
+        length_count = max(nums)+1
+        count = [0]*length_count
+        for i in nums:
+            count[i]+=1
+        max_value = max(count)
+        return count.index(max_value)
+        
